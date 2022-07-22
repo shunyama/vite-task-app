@@ -22,7 +22,7 @@ const newTask = reactive({
     </div>
 
     <div class="input-form-desc">
-      TEXTAREA: <textarea v-model="newTask.desc"></textarea>
+      DESC: <textarea v-model="newTask.desc"></textarea>
     </div>
     
     <button type="button" @click="addTask(newTask)">CREATE</button>
