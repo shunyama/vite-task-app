@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
 import useAddTask from '../store/Task/actions/useAddTask';
+import useDestroyTask from '../store/Task/actions/useDestroyTask';
 import useGetAllTasks from '../store/Task/selectors/useGetAllTasks';
 
 const addTask = useAddTask();
+const destroyTask = useDestroyTask();
 const allTasks = useGetAllTasks();
 
 const newTask = reactive({
@@ -31,11 +33,13 @@ const newTask = reactive({
       <th class="th-id">ID</th>
       <th class="th-name">Name</th>
       <th class="th-desc">Description</th>
+      <th class="th-destroy"></th>
     </tr>
     <tr v-for="task in allTasks" :key="task.id">
       <td>{{ task.id }}</td>
       <td>{{ task.name }}</td>
       <td>{{ task.desc }}</td>
+      <a class="delete-link" @click="destroyTask(task.id)">DELETE</a>
     </tr>
   </table>
 </template>
@@ -67,6 +71,10 @@ const newTask = reactive({
 
   .th-desc {
     width: 300px;
+  }
+
+  .delete-link {
+    cursor: pointer;
   }
 }
 
