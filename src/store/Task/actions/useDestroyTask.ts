@@ -1,6 +1,5 @@
 import { useTaskStore } from '../index';
 
-
 export default () => {
   const taskStore = useTaskStore();
 
@@ -8,5 +7,5 @@ export default () => {
     taskStore?.data.forEach((task, i) => {
       if (task.id === id) taskStore?.data.splice(i, 1);
     });
-  }
-}
+  };
+};

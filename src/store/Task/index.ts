@@ -1,5 +1,4 @@
-import { inject, provide, reactive } from "vue";
-
+import { inject, provide, reactive } from 'vue';
 
 const TASKS_STORE_KEY = 'tasks-store';
 
@@ -17,7 +16,7 @@ const initialData: TaskType = {
   id: 1,
   name: 'sample',
   desc: 'this is a sample data',
-}
+};
 
 export const provideTask = () => {
   const state = reactive<TaskStoreType>({
@@ -25,7 +24,7 @@ export const provideTask = () => {
   });
 
   state.data.push(initialData);
-  provide(TASKS_STORE_KEY, state)
+  provide(TASKS_STORE_KEY, state);
 };
 
 export const useTaskStore = () => inject<TaskStoreType>(TASKS_STORE_KEY);
