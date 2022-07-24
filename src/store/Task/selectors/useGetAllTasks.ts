@@ -1,5 +1,5 @@
 import { computed } from 'vue';
-import { useTaskStore } from '..';
+import { useTaskStore } from '../index.ts';
 
 export default () => {
   const taskStore = useTaskStore();

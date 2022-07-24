@@ -1,4 +1,4 @@
-import { useTaskStore } from '../index';
+import { useTaskStore } from '../index.ts';
 
 export default () => {
   const taskStore = useTaskStore();

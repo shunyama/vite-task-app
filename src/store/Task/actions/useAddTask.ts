@@ -1,4 +1,4 @@
-import { useTaskStore } from '../index';
+import { useTaskStore } from '../index.ts';
 
 export default () => {
   const taskStore = useTaskStore();
@@ -11,8 +11,9 @@ export default () => {
       name: obj.name,
       desc: obj.desc,
     };
-    obj.name = obj.desc = '';
-
     taskStore?.data.push(newData);
+
+    obj.name = '';
+    obj.desc = '';
   };
 };
