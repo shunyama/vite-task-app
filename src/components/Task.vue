@@ -3,6 +3,7 @@ import { reactive } from 'vue';
 import useAddTask from '../store/Task/actions/useAddTask';
 import useDestroyTask from '../store/Task/actions/useDestroyTask';
 import useGetAllTasks from '../store/Task/selectors/useGetAllTasks';
+import MyModal from './MyModal.vue'
 
 const addTask = useAddTask();
 const destroyTask = useDestroyTask();
@@ -16,6 +17,15 @@ const newTask = reactive({
 
 
 <template>
+  <!-- Fragments -->
+  <div class="outer">
+    <h3>Vue Teleport Example</h3>
+    <div>
+      <MyModal />
+      <div class="greet">hello!</div>
+    </div>
+  </div>
+
   <div class="input-form">
     <div class="input-form-name">
       NAME: <input type="text" v-model="newTask.name">
@@ -53,6 +63,12 @@ const newTask = reactive({
     padding: 12px 0;
   }
 }
+
+.greet {
+    // z-index: 999;
+    display: none;
+    position: absolute;
+  }
 
 .task-list {
   margin-top: 12px;
