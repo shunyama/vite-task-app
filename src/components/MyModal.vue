@@ -20,17 +20,21 @@
   const open = ref(false);
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .modal {
   position: fixed;
   z-index: 100;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  left: 10%;
+  top: 10%;
+  bottom: 10%;
+  width: 80%;
+  height: 80%;
   overflow: auto;
   text-align: center;
-  padding-top: 10%;
   background: grey;
+
+  p {
+    font-size: 32px;
+  }
 }
 </style>

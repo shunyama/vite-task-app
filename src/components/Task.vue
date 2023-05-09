@@ -54,7 +54,7 @@ const newTask = reactive({
   </table>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .input-form {
   background: #F0F0F0;
   padding: 64px;
